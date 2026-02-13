@@ -52,12 +52,11 @@ def create_combined_features(df):
         director = " ".join(row["director"])
         overview = row["overview"] if isinstance(row["overview"], str) else ""
 
-        # 🔥 Feature Weighting Strategy
         weighted_text = (
             f"{genres} "
             f"{keywords} "
-            f"{cast} {cast} "           # cast weighted 2x
-            f"{director} {director} {director} "  # director weighted 3x
+            f"{cast} {cast} "           
+            f"{director} {director} {director} "  
             f"{overview}"
         )
 
